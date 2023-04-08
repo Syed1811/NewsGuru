@@ -13,7 +13,7 @@ const News = (props) => {
   useEffect(() => {
     document.title = `${capitalizeFirstLetter(props.category)} - NewsGuru`;
     updateNews();
-  }, []);
+  }, [page]);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -21,13 +21,13 @@ const News = (props) => {
 
   const updateNews = async () => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${props.page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
     let parsedData = await data.json();
     props.setProgress(70);
-    setArticles(parsedData.articles);
+    setArticles([...articles, ...parsedData.articles]);
     setTotalResults(parsedData.totalResults);
     setLoading(false);
     props.setProgress(100);
@@ -35,11 +35,6 @@ const News = (props) => {
 
   const fetchMoreData = async () => {  
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${props.page}&pageSize=${props.pageSize}`;
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    setArticles([...articles, ...parsedData.articles]);
-    setTotalResults(parsedData.totalResults);
   };
 
   return (
@@ -58,7 +53,6 @@ const News = (props) => {
               return (
                 <div className="col-lg-12 col-md-12" key={element.url} style={{color: props.mode==='dark'?'white':'#000000'}}>
                   <NewsItem
-                  
                     title={element.title ? element.title : ''}
                     description={element.description ? element.description : ''}
                     imageUrl={element.urlToImage}
@@ -88,8 +82,6 @@ News.propTypes = {
   country: PropTypes.string,
   pageSize: PropTypes.number,
   category: PropTypes.string,
-  apikey: PropTypes.string.isRequired,
-  setProgress: PropTypes.func.isRequired,
 };
 
 export default News;

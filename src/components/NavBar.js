@@ -5,7 +5,7 @@ const NavBar = (props)=>{
 
         return (
             <div>
-                <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+                <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">NewsGuru</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,11 +29,15 @@ const NavBar = (props)=>{
                                 <li><Link className="dropdown-item" to="/technology">Technology</Link></li>
                             </ul>
                         </div>
-                        <li className='nav-item' style={{marginTop:"5px"}}>
-                        <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-                            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
-                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
-                        </div>
+                        <li className='nav-item' style={{marginTop:"10px",marginLeft:'11px'}}>
+                        <div>
+                                <input type="checkbox" class="checkbox" id="checkbox" onClick={props.toggleMode}/>
+                            <label for="checkbox" class="label">
+                                <i class="fas fa-moon"></i>
+                                <i class='fas fa-sun'></i>
+                                <div class='ball'/>
+                            </label>
+                            </div>
                         </li>
                         
                         </ul>
