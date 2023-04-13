@@ -13,9 +13,9 @@ Open https://syednewsguru.netlify.app to view it in your browser.
 
 ## `Screenshot`
 <img width="942" alt="Screenshot 2023-04-13 231109" src="https://user-images.githubusercontent.com/100852456/231842210-b9745d55-6242-4b56-8048-b5be8bdb01b9.png">
-###`Infinite Scroll`
+### `Infinite Scroll`
 <img width="930" alt="Screenshot 2023-04-13 231201" src="https://user-images.githubusercontent.com/100852456/231842390-1ce436d9-6390-4915-b71f-9c22f5169a65.png">
-###`Dark Mode`
+### `Dark Mode`
 ![image](https://user-images.githubusercontent.com/100852456/231842912-9e52c885-7821-4511-b4f2-8199f12863d0.png)
 
 
