@@ -11,6 +11,9 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open https://syednewsguru.netlify.app to view it in your browser.
 
+## `Screenshot'
+<img width="942" alt="Screenshot 2023-04-13 231109" src="https://user-images.githubusercontent.com/100852456/231842210-b9745d55-6242-4b56-8048-b5be8bdb01b9.png">
+
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
