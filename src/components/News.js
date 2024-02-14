@@ -21,7 +21,7 @@ const News = (props) => {
 
   const updateNews = async () => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://mocki.io/v1/ae982718-21e6-47c9-aad4-b9b7cc401a36`;
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
